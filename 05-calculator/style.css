@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator__container {
+    padding: 50px 0 0 0;
+    margin: 0 auto;
+    max-width: 35%;
+}
+.calculator__body {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: lightblue;
+}   
+.calculator__inputs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inputs {
+}
+.inputs__input{
+    margin: 10px;
+}
+.input__a {
+}
+.input__b {
+}
+.calculator__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttons {
+}
+.buttons__button {
+    padding: 10px;
+}
+
+.button__{
+    width: 30px;
+    height: 30px;
+}
+.button--sum {
+}
+.button--minus {
+}
+.button--split {
+}
+.button--multiply {
+}
+.calculator__result {
+}
+.result {
+}
+.result__window {
+    min-width: 100px;
+    height: 30px;
+    background: lightgray;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}

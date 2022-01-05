@@ -1,0 +1,24 @@
+body {
+   height: 100vh;
+}
+
+.container {
+    min-height: 100%;
+    background: lightblue;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    height: 50px;
+    padding: 30px;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}

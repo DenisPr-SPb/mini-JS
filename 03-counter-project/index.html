@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="counter__container _container">
+        <div class="counter__incriment">
+            <button class="counter__btn btn-dicriment">-</button>    
+        </div>
+
+        <div class="counter__sum">0</div>
+
+        <div class="counter__dicriment">
+            <button class="counter__btn btn-incriment">+</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let plus = document.querySelector('.btn-incriment');
+        let minus = document.querySelector('.btn-dicriment');
+        let sum = document.querySelector('.counter__sum')
+
+        let count = 0;
+
+        plus.onclick = function () {
+            count ++;
+            sum.innerHTML = count;
+        }
+
+        minus.onclick = function () {
+            count --;
+            sum.innerHTML = count;
+        }
+    </script>
+</body>
+</html>
