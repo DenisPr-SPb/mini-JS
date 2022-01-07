@@ -10,7 +10,11 @@ const setNewDate = new Date (`${setYear}`, `${setMonth}`, `${setDay}`, `${setHou
 
 console.log(setNewDate);
 
-const countdownFunc = setInterval( () => {
+function btnStart () {
+    setInterval(countdownFunc, 1000)
+}
+
+const countdownFunc = () => {
     const nowTime = new Date();
     // console.log(nowTime);
     const timeLeft = setNewDate - nowTime;
@@ -34,5 +38,5 @@ const countdownFunc = setInterval( () => {
         document.querySelector('.seconds__left').innerHTML = 'D';
     }
    
-}, 1000)
+}
 
