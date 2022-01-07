@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="_container">
+        <div class="set__timer timer">
+            <form action="name">
+                <fieldset class="timer__fildset">
+                    <legend>Задайте необходимые дату и время</legend>
+                    <input type="text" class="timer__input set-year" placeholder="2022">
+                    <input type="text" class="timer__input set-month" placeholder="01">
+                    <input type="text" class="timer__input set-day" placeholder="01">
+                    <input type="text" class="timer__input set-hour" placeholder="00">
+                    <input type="text" class="timer__input set-minute" placeholder="00">
+                    <!-- <input type="text" class="timer__input set-second" placeholder="00"> -->
+                </fieldset>
+            </form>
+        </div>
+
+        <button onclick="countdownFunc()" >Погнали</button>
+
+        <p class="info">До события осталось:</p>
+
+        <div class="countdown__container end-time">
+            <div class="countdown__days countdown--frame">
+                <div class="days__left bg">
+
+                </div>
+                <p class="days__text text">Дней</p>
+            </div>
+            <div class="countdown__hours countdown--frame">
+                <div class="hours__left bg">
+
+                </div>
+                <p class="hours__text text">Часов</p>
+            </div>
+            <div class="countdown__minutes countdown--frame">
+                <div class="minutes__left bg">
+
+                </div>
+                <p class="minutes__text text">Минут</p>
+            </div>
+            <div class="countdown__seconds countdown--frame">
+                <div class="seconds__left bg">
+
+                </div>
+                <p class="seconds__text text">Секунд</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

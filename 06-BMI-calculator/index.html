@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator__container _container">
+        <div class="calculator__body">
+            <div class="calculator__weight weight">
+                <div class="weight__input">
+                    <p>Ввдите вес</p>
+                    <input type="text" class="input-weight">
+                </div>
+
+                <div class="height__input">
+                    <p>Ввдите рост см</p>
+                    <input type="text" class="input-height">
+                    <button onclick="calcBMI()" class="button">sent</button>
+                </div>   
+            </div>
+            
+            <div class="calculator__result result">
+
+                <div class="result__numbers">
+
+                </div>
+                <div class="result__text">
+
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function calcBMI (m,h) {
+            
+            m = +document.querySelector('.input-weight').value
+            h = +document.querySelector('.input-height').value 
+            
+            let result = (( m / ((h * h) / 100 )) * 100).toFixed(2)
+            console.log(result);
+
+            switch (true) {
+                case result <= 16:
+                    return document.querySelector('.result__text').innerHTML = 'Выраженный дефицит массы тела'
+                
+                case result <= 18.5:
+                    return document.querySelector('.result__text').innerHTML = 'Недостаточная (дефицит) масса тела'
+                
+                case result <= 25:
+                    return document.querySelector('.result__text').innerHTML = 'Норма'
+                
+                case result <= 30:
+                    return document.querySelector('.result__text').innerHTML = 'Избыточная масса тела (предожирение) '
+                                
+                case result <= 35:
+                    return document.querySelector('.result__text').innerHTML = 'Ожирение 1 степени'
+                                
+                case result <= 40:
+                    return document.querySelector('.result__text').innerHTML = 'Ожирение 2 степени'
+                
+                case result > 40:
+                    return document.querySelector('.result__text').innerHTML = 'Ожирение 3 степени'
+            }
+        }
+
+    </script>
+</body>
+</html>
