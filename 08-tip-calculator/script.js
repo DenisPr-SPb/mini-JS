@@ -4,7 +4,7 @@ const div = document.createElement('div');
 div.classList.add('buttons__keyboard');
 document.querySelector('.buttons__body').appendChild(div);
 
-const calcButtons = 'AC CE . / 7 8 9 * 4 5 6 - 1 2 3 + 0 =';
+const calcButtons = 'AC ? . / 7 8 9 * 4 5 6 - 1 2 3 + 0 =';
 calcButtons.split(' ').map(symbol => {
     div.insertAdjacentHTML('beforeend', `<button class="button btn--${symbol}">${symbol}</button>`);
 });
@@ -27,10 +27,6 @@ function clearAll () {
     output.innerHTML = 0;
 }
 
-function delteOneNum () {
-
-}
-
 document.querySelector('.buttons__body').onclick = (event) => {
     
     if(!event.target.classList.contains('button')) {
@@ -39,10 +35,6 @@ document.querySelector('.buttons__body').onclick = (event) => {
     if(event.target.classList.contains('btn--AC')) {
         clearAll();
     }
-    if(event.target.classList.contains('btn--CE')) {
-        delteOneNum();
-    }
-
     output.textContent = '';
     const key = event.target.textContent;
     if (nums.includes(key)) {
