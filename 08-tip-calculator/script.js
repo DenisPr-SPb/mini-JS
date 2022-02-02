@@ -1,43 +1,114 @@
-
+// -----------рисуем кнопки
 const output = document.querySelector('.display__output')
-
 const div = document.createElement('div');
 div.classList.add('buttons__keyboard');
 document.querySelector('.buttons__body').appendChild(div);
 
-const calcButtons = 'C CE % / 7 8 9 * 4 5 6 - 1 2 3 + 0 ( ) =';
+const calcButtons = 'AC CE . / 7 8 9 * 4 5 6 - 1 2 3 + 0 =';
 calcButtons.split(' ').map(symbol => {
-    div.insertAdjacentHTML('beforeend', `<button class="button" value="${symbol}">${symbol}</button>`);
+    div.insertAdjacentHTML('beforeend', `<button class="button btn--${symbol}">${symbol}</button>`);
 });
+// -----------рисуем кнопки КОНЕЦ
 
-let btnValues = document.querySelectorAll('.button');
-console.log(btnValues.classList);
+//-------------------------------------------------------------------------------------
+let firstNum = ''; // перве число
+let secondNum = ''; //второе число
+let sign = ''; 
+let finish = false;
+ 
+const nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
+const operation = ['+', '-', '*', '/']
 
-if (btnValues.value === '+') {
-    btnValues.classList.add('button-plus', 'option-btn');
-   
+function clearAll () { 
+    firstNum = '';
+    secondNum = '';
+    sign = '';
+    finish = false;
+    output.innerHTML = 0;
 }
 
+function delteOneNum () {
 
-document.querySelectorAll('.button').forEach(button => {
-    button.addEventListener('click', function () {        
-        if (this.value === 'C') {
-            output.innerHTML = '';
-        } else if (this.value === 'CE') {
-            output.innerHTML = output.innerHTML.substring(0, output.innerHTML.length - 1);
+}
+
+document.querySelector('.buttons__body').onclick = (event) => {
+    
+    if(!event.target.classList.contains('button')) {
+        return console.log('NOT BTN');
+    }
+    if(event.target.classList.contains('btn--AC')) {
+        clearAll();
+    }
+    if(event.target.classList.contains('btn--CE')) {
+        delteOneNum();
+    }
+
+    output.textContent = '';
+    const key = event.target.textContent;
+    if (nums.includes(key)) {
+        if (secondNum == '' && sign == '') {
+            firstNum += key;
+            output.textContent = firstNum;
+        } else if ( firstNum !== '' && secondNum !== '' && finish) {
+            secondNum = key;
+            finish = false;
+            output.textContent = secondNum;
         } else {
-            output.innerHTML += this.value;
+            secondNum += key;
+            output.textContent = secondNum;
+            
         }
+        return;
+    }
 
-        const currentNum = output.value;
-        console.log(currentNum);
-        
-        const moveNum = function () {
-            oldNum = currentNum;
-            currentNum = '';
-
+    if (operation.includes(key)) {
+        sign = key;
+        output.textContent = sign;
+        return;
+    }
+ 
+    if (key === '=') { 
+        if (secondNum === '') {
+            secondNum = firstNum;
         }
-    });
-});
+        switch (sign) {
+            case '+' : 
+            firstNum = +firstNum + +secondNum;
+            break;
+            case '-' : 
+            firstNum = +firstNum - +secondNum;
+            break;
+            case '*' : 
+            firstNum = +firstNum * +secondNum;
+            break;
+            case '/' : 
+            if (firstNum === '0' || secondNum === '0') {
+                output.textContent = 'На 0 делить нельзя!';
+                firstNum = '' ;
+                secondNum = '';
+                sign = '';
+                return;
+            }
+            firstNum = +firstNum / +secondNum;
+            break;
+        }
+        finish = true;
+        output.textContent = firstNum;
+        console.log( firstNum,sign, secondNum);
+    }
+}
+
+// document.querySelectorAll('.button').forEach(button => {
+//     button.addEventListener('click', function () {        
+//         if (this.value === 'C') {
+//             output.innerHTML = '';
+//         } else if (this.value === 'CE') {
+//             output.innerHTML = output.innerHTML.substring(0, output.innerHTML.length - 1);
+//         } else {
+//             output.innerHTML += this.value;
+//         }
+
+//     });
+// });
 
 

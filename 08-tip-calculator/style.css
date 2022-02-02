@@ -62,3 +62,7 @@
 .button-plus {
     background-color: red;
 }
+
+.btn--0 {
+    min-width: 48%;
+}
