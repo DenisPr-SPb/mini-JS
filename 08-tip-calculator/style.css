@@ -59,6 +59,10 @@
     margin: 3px;
 }
 
+.button:last-child {
+    min-width: 48%;
+}
+
 .button-plus {
     background-color: red;
 }

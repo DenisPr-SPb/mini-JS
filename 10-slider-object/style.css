@@ -1,0 +1,12 @@
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+img {
+    margin: 20px;
+    max-width: 300px;
+}
