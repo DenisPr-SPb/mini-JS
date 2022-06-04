@@ -90,17 +90,5 @@ document.querySelector('.buttons__body').onclick = (event) => {
     }
 }
 
-// document.querySelectorAll('.button').forEach(button => {
-//     button.addEventListener('click', function () {        
-//         if (this.value === 'C') {
-//             output.innerHTML = '';
-//         } else if (this.value === 'CE') {
-//             output.innerHTML = output.innerHTML.substring(0, output.innerHTML.length - 1);
-//         } else {
-//             output.innerHTML += this.value;
-//         }
-
-//     });
-// });
 
 
