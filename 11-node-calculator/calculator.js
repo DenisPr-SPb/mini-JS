@@ -8,7 +8,6 @@ class Calculator {
         }
     }
 
-
     multiplyAndDivide( str ) {
         if ( /[*/]/.test( str ) ) {
             return this.multiplyAndDivide(
